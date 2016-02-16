@@ -11,6 +11,8 @@ OUTPUT: Element that occurs only once.
 ERROR CASES: Return -1 for invalid inputs.
 
 NOTES:
+There are better ways of solving the problem than a brute-force solution which is of O(n^2)
+complexity .
 */
 
 int findSingleOccurenceNumber(int *A, int len) {
