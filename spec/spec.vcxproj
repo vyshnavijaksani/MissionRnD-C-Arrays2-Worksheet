@@ -87,9 +87,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="countGreaterNumbersSpec.cpp" />
-    <ClCompile Include="findSingleOccurenceNumberSpec.cpp" />
-    <ClCompile Include="mergeSortedArraysSpec.cpp" />
-    <ClCompile Include="sortedArraysCommonElementsSpec.cpp" />
+    <ClCompile Include="findSingleOccurenceNumberSpec.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="mergeSortedArraysSpec.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="sortedArraysCommonElementsSpec.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

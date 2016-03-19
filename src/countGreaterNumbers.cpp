@@ -19,7 +19,53 @@ struct transaction {
 	char date[11];
 	char description[20];
 };
+struct dates{
+	int date;
+	int month;
+	int year;
+
+};
 
 int countGreaterNumbers(struct transaction *Arr, int len, char *date) {
-	return -1;
+	int i = 0;
+	dates dts[5];
+	for (i = 0; i < len; i++)
+	{
+		dts[i].date = (((Arr[i].date[0] * 10) - '0') + ((Arr[i].date[1] * 1) - '0'));
+		dts[i].month = (((Arr[i].date[3] * 10) - '0') + ((Arr[i].date[4] * 1) - '0'));
+		dts[i].year = (((Arr[i].date[6] * 1000) - '0') + ((Arr[i].date[7] * 100) - '0') + ((Arr[i].date[8] * 10) - '0') + ((Arr[i].date[9] * 1) - '0'));
+
+
+	}
+	int chkday;
+	int chkmonth;
+	int chkyear;
+	int count = 0;
+	chkday = (((date[0] * 10) - '0') +(( date[1] * 1) - '0'));
+	chkmonth = (((date[3] * 10) - '0') + ((date[4] * 1) - '0'));
+	chkyear = (((date[6] * 1000) - '0') + ((date[7] * 100) - '0') + ((date[8] * 10) - '0') + ((date[9] * 1) -'0'));
+	i = 0;
+	while (i < len)
+	{
+		if (dts[i].year > chkyear)
+		{
+			count++;
+		}
+		else if (dts[i].year == chkyear)
+		{
+			if (dts[i].month > chkmonth)
+			{
+				count++;
+			}
+			else if (dts[i].month == chkmonth)
+			{
+				if (dts[i].date > chkday)
+				{
+					count++;
+				}
+			}
+		}
+		i++;
+	}
+	return count;
 }
