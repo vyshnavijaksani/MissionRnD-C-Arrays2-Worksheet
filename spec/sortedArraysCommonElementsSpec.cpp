@@ -43,7 +43,7 @@ namespace spec
 			struct transaction expected[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
 			struct transaction *result = sortedArraysCommonElements(A, 3, A, 3);
 			Assert::IsTrue(compare(result, expected, 3), L"All common elements Check failed.", LINE_INFO());
-		}
+		} 
 
 		TEST_METHOD(radomCommonElements)
 		{
