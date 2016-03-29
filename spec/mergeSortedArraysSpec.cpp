@@ -27,7 +27,7 @@ namespace spec
 			Assert::IsNull(mergeSortedArrays(NULL, 2, A, 5), L"null check failed.", LINE_INFO());
 		}
 
-		TEST_METHOD(sameArrays)
+	TEST_METHOD(sameArrays)
 		{
 			struct transaction A[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
 			struct transaction B[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
